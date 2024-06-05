@@ -1,0 +1,19 @@
+704. 二分查找 
+https://leetcode.cn/problems/binary-search/
+
+  方法一：
+  class Solution:
+      def search(self, nums: List[int], target: int) -> int:
+          nums = sorted(nums)
+          if target not in nums:
+              return -1
+          return nums.index(target)
+  思考：
+       没有使用到二分法，主要使用python中自带的方法库，整理了一下sort和sorted的用法，还有index的用法
+  
+  方法二：
+        
+          
+
+
+27. 移除元素
