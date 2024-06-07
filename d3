@@ -1,1 +1,26 @@
+203.移除链表元素  
+https://leetcode.cn/problems/remove-linked-list-elements/
 
+
+707.设计链表
+https://leetcode.cn/problems/design-linked-list/
+解法：
+
+反思：
+
+206.反转链表 
+https://leetcode.cn/problems/reverse-linked-list/description/
+解法：
+
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        cur = head
+        pre = None
+        while cur:
+            temp = cur.next
+            cur.next = pre
+            pre = cur
+            cur = temp
+        return pre
+反思：
+1. 捋清楚反转链表temp/cur/pre所指代的元素，并不需要新建一个列表再进行存储
