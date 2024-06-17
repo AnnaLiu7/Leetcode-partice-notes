@@ -1,1 +1,36 @@
+第四章 字符串part01
+344. 反转字符串
+https://leetcode.cn/problems/reverse-string/
+解法：
+class Solution:
+    def reverseString(self, s: list[str]) -> None:
+        length = len(s)
+        l,r = 0, length-1
+        tmp =[]
+        while l < r:
+            tmp = s[l]
+            s[l] = s[r]
+            s[r] = tmp
+            l+=1
+            r-=1
+        return  s
+总结：
+一次ac，本题相对简单，需要注意的是题目中说明需要在原地修改数组
 
+541. 反转字符串 II
+https://leetcode.cn/problems/reverse-string-ii/
+解法：
+class Solution:
+    def reverseStr(self, s: str, k: int) -> str:
+        s_len = len(s)
+        l, r = 0, k
+        res = ""
+        while l < s_len:
+            res += s[l:min(r,s_len)][::-1] + s[min(r,s_len):min(r,s_len) + k]
+            l += 2 * k
+            r += 2 * k
+        return res
+总结：
+每次刷到这道题都会被卡在这边，总的来说需要思考清楚双指针的用法，如何控制双指针，在纸上提前规划好整体的思路在coding
+while的循环条件也需要考虑清楚，如何判断
+res定义的时候不要每次都直接定义成list，返回str格式就定义成str格式比较好
