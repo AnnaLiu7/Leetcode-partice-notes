@@ -1,1 +1,39 @@
+day 9
+第四章 字符串part02
+151. 反转字符串中的单词
+https://leetcode.cn/problems/reverse-words-in-a-string/description/
+解法：
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        ss = (s.split())
+        ss = reversed(ss)
+        res = ' '.join(ss)
+        return res
 
+注意点：
+1. split的用法
+2. reverse 和 reversed用法
+3. srot 和 sorted用法
+4. 在列表中增加字符的方法
+  1）拼接字符串
+      如果你最终想要将列表转换为带空格分隔的字符串，可以直接使用 join 方法。
+      # 原始列表
+      my_list = ['apple', 'banana', 'cherry']
+      # 将列表转换为带空格分隔的字符串
+      result = ' '.join(my_list)
+      print(result)
+5. 去除空格的方法
+
+
+28. 找出字符串中第一个匹配项的下标
+https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+解法：
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        n = len(needle)
+        for l in range(len(haystack)):
+            if haystack[l:l+n] == needle:
+                return l
+        return -1
+  思考：
+  思路一下没办法转换过来，按照代码随想录其实本道题目需要用到前缀和，这个是另一种难度的思考了，上面的解法主要还是直接解答，但是如何切割字符串的这个思路我需要好好思考一下
