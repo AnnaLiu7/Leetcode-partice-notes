@@ -1,8 +1,22 @@
 977.有序数组的平方 
 https://leetcode.cn/problems/squares-of-a-sorted-array/
 
-
-
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        for i in range(len(nums)):
+            nums[i] = nums[i] ** 2
+        nums = sorted(nums)
+        return nums
+注意：
+python平方的用法
+  1. 使用乘法运算符:
+    x = 5
+    square = x * x
+    print(square)  # 输出 25
+  2. 使用幂运算符 **:
+    x = 5
+    square = x ** 2
+    print(square)  # 输出 25
 
 209.长度最小的子数组
 https://leetcode.cn/problems/minimum-size-subarray-sum/
